@@ -53,3 +53,21 @@
 .titulo {
   text-align: center;
 }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: sans-serif;
+}
+
+p {
+  max-width: 30ch;
+}
+
+.fila {
+  display: flex;
+  align-items: center;
+  gap: 20px; 
+}
+
+.fila img {
+  width: 200px;
+}
