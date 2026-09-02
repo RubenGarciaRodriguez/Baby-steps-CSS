@@ -36,20 +36,6 @@
 .color3 { background-color: #A49A87; } 
 
 
-.cuadricula {
-  display: grid;
-  grid-template-columns: repeat(3, 80px);
-  gap: 10px;                  
-  background-color: #001a33; 
-  padding: 8px;         
-}
-
-.cuadricula div {
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(to bottom right, #0066ff, #ff66cc);
-}
-
 .titulo {
   text-align: center;
 }
@@ -59,16 +45,55 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p {
-  max-width: 30ch;
+  max-width: 50ch;
+  text-align: justify;
 }
 
 .fila {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  margin-left: 40px; 
+  margin-left: 60px;
+  overflow: auto; 
 }
 
 .fila img {
   width: 200px;
 }
+
+.flotante {
+    float: left;
+    width: 120px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+/* Contenedor general */
+.cuadricula {
+  position: relative;
+  width: 540px;   /* 6*80 + 5*10 */
+  height: 540px;  /* igual que el ancho */
+  padding: 20px;
+  background-color: #001a33; /* líneas oscuras */
+}
+
+/* Capa del degradado detrás */
+.degradado {
+  position: absolute;
+  inset: 20px; /* coincide con el padding */
+  background: linear-gradient(to bottom right, #0066ff, #9933ff, #ff3399, #ff6666);
+  z-index: 0;
+}
+
+/* Cuadrícula encima */
+.grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(6, 80px);
+  grid-template-rows: repeat(6, 80px);
+  gap: 10px; /* líneas oscuras */
+  z-index: 1;
+}
+
+/* Cuadrados oscuros */
+.grid div {
+  background-color: #001a33;
+}
+
